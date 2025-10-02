@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace, "Courier New", Courier;
+}
+
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+}
+
+.logo {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style-type: none;
+    font-size: 1rem;
+    display: flex;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 1.5rem;
+}
+
+form {
+    padding: 12rem;
+
+}
+
+input {
+    width: 12em;
+    height: 1.5em margin-bottom:1;
+
+}
