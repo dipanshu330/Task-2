@@ -20,30 +20,49 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <form>
-            <fieldset>
-                <legend><b>Registration Form</b></legend>
-                <label> Name </label>
-                <input type="text" placeholder="Your Name" required><br>
-                <label>Email </label>
-                <input type="email" placeholder="Type Your Email" required><br>
-                <label>Contact Number </label>
-                <input type="number" placeholder="Type Your Contact Number" required><br>
-                <label>Gender</label>
-                <select name="gender" id="gender">
+    <div class="form-container">
+
+        <form id="registrationForm">
+            <h2>Registration Form</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <div class="error" id="nameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter your email">
+                <div class="error" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="text" id="contact" placeholder="Enter Phone Number">
+                <div class="error" id="contactError"></div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
-                </select><br>
-                <label>Password</label>
-                <input type="password" placeholder="Type your Password" required><br>
-                <label>Confirm Password</label>
-                <input type="password" placeholder="Confirm Your Password" required><br>
-                <button type="submit">Submit</button>
-            </fieldset>
+
+                </select>
+                <div class="error" id="genderError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <div class="error" id="passwordError"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Re-enter password">
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+            <button type="submit">Submit</button>
         </form>
-    </main>
+
+    </div>
 </body>
 
 </html>
