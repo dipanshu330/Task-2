@@ -13,19 +13,19 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     let nameError = document.getElementById("nameError");
 
     if (name === "") {
-        nameError.textContent = "Please enter your name.";
+        nameError.textContent = "**Please enter your name.";
         valid = false;
     } else {
-        let onlyLetters = true;
+        let Letters = true;
         for (let i = 0; i < name.length; i++) {
             let ch = name[i];
             if (!((ch >= "A" && ch <= "Z") || (ch >= "a" && ch <= "z") || ch === " ")) {
-                onlyLetters = false;
+                Letters = false;
                 break;
             }
         }
-        if (!onlyLetters) {
-            nameError.textContent = "Name can have only letters and spaces.";
+        if (!Letters) {
+            nameError.textContent = "**Name can have only letters and spaces.";
             valid = false;
         } else {
             nameError.textContent = "";
@@ -36,10 +36,10 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     let emailError = document.getElementById("emailError");
 
     if (email === "") {
-        emailError.textContent = "Please enter your email.";
+        emailError.textContent = "**Please enter your email.";
         valid = false;
     } else if (email.indexOf("@") === -1) {
-        emailError.textContent = "Email must contain '@' symbol.";
+        emailError.textContent = "**Email must contain '@' symbol.";
         valid = false;
     } else {
 
@@ -57,11 +57,11 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     let contact = document.getElementById("contact").value.trim();
     let contactError = document.getElementById("contactError");
     if (contact.length === 0) {
-        contactError.textContent = "Please enter your contact number";
+        contactError.textContent = "**Please enter your contact number";
         valid = false;
     }
     else if (contact.length !== 10) {
-        contactError.textContent = "Contact number must be 10 digits.";
+        contactError.textContent = "**Contact number must be 10 digits.";
         valid = false;
     }
     else {
@@ -74,32 +74,67 @@ document.getElementById("registrationForm").addEventListener("submit", function 
     let genderError = document.getElementById("genderError");
 
     if (gender === "") {
-        genderError.textContent = "Please select your gender.";
+        genderError.textContent = "**Please select your gender.";
         valid = false;
     } else {
         genderError.textContent = "";
     }
 
+
     let password = document.getElementById("password").value;
     let passwordError = document.getElementById("passwordError");
+
     if (password === "") {
-        passwordError.textContent = "Please enter your Password";
+        passwordError.textContent = "**Please enter your password.";
         valid = false;
-    }
-    else if (password.length < 6) {
-        passwordError.textContent = "Password must be at least 6 characters.";
+    } else if (password.length < 6) {
+        passwordError.textContent = "**Password must be at least 6 characters long.";
         valid = false;
     } else {
-        passwordError.textContent = "";
+
+        let hasUppercase = false;
+        let hasLowercase = false;
+        let hasNumber = false;
+        let hasSpecial = false;
+
+        for (let i = 0; i < password.length; i++) {
+            let ch = password[i];
+            if (ch >= "A" && ch <= "Z") {
+                hasUppercase = true;
+            } else if (ch >= "a" && ch <= "z") {
+                hasLowercase = true;
+            } else if (ch >= "0" && ch <= "9") {
+                hasNumber = true;
+            } else {
+                hasSpecial = true;
+            }
+        }
+
+        if (!hasUppercase) {
+            passwordError.textContent = "**Password must contain at least one uppercase letter (A–Z).";
+            valid = false;
+        } else if (!hasLowercase) {
+            passwordError.textContent = "**Password must contain at least one lowercase letter (a–z).";
+            valid = false;
+        } else if (!hasNumber) {
+            passwordError.textContent = "**Password must contain at least one number (0–9).";
+            valid = false;
+        } else if (!hasSpecial) {
+            passwordError.textContent = "**Password must contain at least one special character (!, @, #, $, etc.).";
+            valid = false;
+        } else {
+            passwordError.textContent = "";
+        }
     }
+
     let confirmPassword = document.getElementById("confirmPassword").value;
     let confirmPasswordError = document.getElementById("confirmPasswordError");
 
     if (confirmPassword === "") {
-        confirmPasswordError.textContent = "Please re-enter your password.";
+        confirmPasswordError.textContent = "**Please re-enter your password.";
         valid = false;
     } else if (confirmPassword !== password) {
-        confirmPasswordError.textContent = "Passwords do not match.";
+        confirmPasswordError.textContent = "**Passwords do not match.";
         valid = false;
     } else {
         confirmPasswordError.textContent = "";

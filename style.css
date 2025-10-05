@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: 'Lobster', cursive, "Poppins";
 }
 
 body {
@@ -46,6 +46,34 @@ header {
 .nav-links a:hover {
     color: #ffcc00;
 }
+
+h1 {
+    font-size: 60px;
+    margin: 0 0 20px;
+    color: gold;
+}
+
+p {
+    font-size: 22px;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: gold;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
+
 
 
 .form-container {
