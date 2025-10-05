@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="index.html" class="logo">Filmy Zone</a>
+        <a href="index.html" class="logo">FILMY ZONE</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -21,27 +21,29 @@
         </nav>
     </header>
     <div class="form-container">
-
-        <form id="registrationForm">
+        <div class="header">
             <h2>Registration Form</h2>
+        </div>
+        <form id="registrationForm">
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Name</label><br>
                 <input type="text" id="name" placeholder="Enter your name">
                 <div class="error" id="nameError"></div>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email</label><br>
                 <input type="text" id="email" placeholder="Enter your email">
                 <div class="error" id="emailError"></div>
             </div>
             <div class="form-group">
-                <label for="contact">Contact Number</label>
-                <input type="text" id="contact" placeholder="Enter Phone Number">
+                <label for="contact">Contact Number</label><br>
+                <input type="number" id="contact" placeholder="Enter Phone Number">
                 <div class="error" id="contactError"></div>
             </div>
             <div class="form-group">
                 <label for="gender">Gender</label>
                 <select id="gender">
+                    <option value="">--Select--</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
@@ -50,12 +52,12 @@
                 <div class="error" id="genderError"></div>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Password</label><br>
                 <input type="password" id="password" placeholder="Enter password">
                 <div class="error" id="passwordError"></div>
             </div>
             <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
+                <label for="confirmPassword">Confirm Password</label><br>
                 <input type="password" id="confirmPassword" placeholder="Re-enter password">
                 <div class="error" id="confirmPasswordError"></div>
             </div>
@@ -63,6 +65,7 @@
         </form>
 
     </div>
+    <script src="first.js"></script>
 </body>
 
 </html>
